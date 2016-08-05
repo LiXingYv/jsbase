@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //->1、递归：当前函数自己调用自己执行
+
+    //实现1-100之间，把所有不能被三整除的树相加
+    //    function sum(n) {
+    //        if(n===0){
+    //            return 0;
+    //        }
+    //        return n+sum(n-1);//->100+sum(99) ->100+99+sum(98) ->100+99+98+sum(97)...->100+99+98+97+...+1+0
+    //    }
+    //
+    //    var total = sum(100);
+
+
+        function sum(n) {
+            if(n===0){
+                return 0;
+            }
+
+            if(n%3 === 0){
+                return sum(n-1);
+            }
+
+            return n+sum(n-1);
+        }
+
+        var total = sum(10);
+        // ->sum(10) ->10+sum(9) ->10+sum(8) ->10+8+7+sum(6) ->10+8+7+sum(5) ->10+8+7+5+sum(4) ->10+8+7+5+4+sum(3) ->10+8+7+5+4+sum(2) ->10+8+7+5+4+2+sum(1) ->10+8+7+5+4+2+1+sum(0) ->10+8+7+5+4+2+1+0
+        console.log(total)
+</script>
+</body>
+</html>

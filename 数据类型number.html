@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //number:正数、负数、0、小数、NaN
+    //NaN:not a number 不是一个有效数字 但是他是属于number数据类型的
+    //NaN==NaN 是不相等的
+    // =是赋值
+    // ==是判断左右两边的值是否相等
+
+    //isNaN();检测一个值不是有效数字的命题是否成立，是有效数字返回false，不是有效数字返回的才是true
+    //如果检测的值不是number类型的，浏览器会默认的把它转化成number类型，然后在判断是否为有效的数字
+    //console.log(isNaN(12));
+    //console.log(isNaN("zhu"));
+    console.log(isNaN("123"));
+    //首先把“123”转化成number类型的Number ==>number("123")
+    //Number():强制将其他的数据类型转换为number类型，要求如果是字符串，字符串中一定都需要是数字才可以转换，例如：Number（“12”）==>12  Number("12px")==>NaN
+
+    //非强制数据类型转换 parseInt/parseFloat
+    //从左到右，一个个字符查找，把是数字的转换为有效的数字，中途如果遇到了一个非有效数字，就不在继续查找了
+    //
+
+</script>
+</body>
+</html>

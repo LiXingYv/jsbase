@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //js数据类型中的对象数据类型
+    //由多组[属性名和属性值]组成，多组键值对组成，由多个key：value
+    //属性名和属性值是用来描述这个对象特征的
+    var obj={name:"zhufeng",age:6};
+    var personInfo={
+        name:"李小雨",
+        age:28,
+        height:"180cm",
+        weight:"60kg"
+    };
+    var obj={name:"zhufeng"};//字面量创建方式
+    var obj=new Object();//实例创建的方式
+
+    //给一个对象增加一组属性名和属性值
+    obj.name="zhufeng";
+    obj["name"]="zhufeng";
+    obj["age"]=6;
+
+    //修改原有属性名的属性值,规定一个对象中的属性名不能重复，如果之前有就是修改，没有就是增加
+    obj["name"]="zhufengpeixun";
+    //obj.name="zhufengpeixun";
+
+    //获取属性名和属性值，如果属性名不存在，默认返回的结果是undefined
+    console.log(obj["name"]);
+    console.log(obj.name);
+    console.log(obj.zz);
+
+    //删除属性名和属性值
+    obj.age=null;//假删除
+    delete obj.age;//真删除
+    console.log(obj);
+
+
+
+    //对象数据类型中，还可以具体的细分：
+    //{}、[]、/^$/、时间...
+
+    //对象类（Object）、数组类（Array）、正则类（RegExp）、时间类（Date）、字符串类（String）、布尔类（Boolean）、Math数学函数....等对应的实例：对象、数组、正则、时间...
+
+    var obj={};
+    var ar=[];
+    var reg=/^$/;
+
+    //js中对象、类、实例的区别：对象是泛指，js中万物皆对象，类是对对象的具体细分，实例是类中的一个具体的事物
+    //举例：自然界中万物皆对象，所有的东西可以分为：人类、植物类、动物类、物体类，每一个人都是人类中的一个具体的实例
+
+
+
+
+</script>
+</body>
+</html>

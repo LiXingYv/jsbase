@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sum() {
+        console.dir(arguments);//->arguments是一个对象数据类型的参数，观察他的结构，它是以数字作为索引，并且有一个length的属性代表一共传递了多少个参数；->它不是数组，我们把它称之为类数组；callee:function sum()... 它还有一个自己特殊的属性callee，代表当前函数本身
+    }
+    var total = sum(100,200,300);
+
+    //在JS中常用到的匿名函数有两种方式：
+    //1)自执行函数：定义函数和函数执行一起完成了
+    ;(function (num) {//->前面加分号的作用是为了防止上面代码结束不加分号
+
+    })(100);
+    //->以下的几种写法都是装x用的，和上面的意思一模一样就是自执行函数
+    +function(num){}(100);
+    -function(num){}(100);
+    !function(num){}(100);
+    ~function(num){}(100);
+    //2)函数表达式：把函数定义的部分当做一个值赋值给一个变量或者元素的某一个行为
+
+
+    //数组中有一个叫做length的属性，这个属性是浏览器天生就给数组增加的（不是我们自己编写的属性），这个属性属于当前数组不可枚举的属性
+
+    //for in循环是用来遍历一个对象中属性名和属性值的，但是对于当前对象不可枚举的属性我们通过它是遍历不到的；例如：我们无法遍历到ary.length这个属性
+</script>
+</body>
+</html>

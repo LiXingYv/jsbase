@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    将css引入到页面中的几种方式
+    1、行内样式
+    2、内嵌式（将css样式写在style标签块里面，放在head里面）
+    3、外链式（只是将内嵌式中的css样式放到外面一个单独的样式文件中了）
+    4、导入式
+    @import “css/index.css”;
+
+    将js引入到页面中的几种方式
+    1、行内引入（不推荐），安全性能比较低
+    2、内嵌式：将js代码写在script脚本块中间
+    3、外链式：将js代码写在外面文件中，通过src找到引入
+    细节：在外链式中，script脚本块中间不可以写js代码，写了也不执行
+    细节：我们通常将js放在body的最后面，原因：html页面是从上到下加载的，js通常是获取html标签给予动态操作效果的，所以需要先加载html标签再加载我们的js
+
+
+
+-->
+
+<script>
+    //js:javascript,是一门轻量级的脚本编程语言
+    //ECMAScript(4、5)：定义了js里面的命名规范、变量、数据类型、基本语法、操作语句等最核心的东西
+    //DOM:document object model 文档对象模型
+    //BOM:browser object model 浏览器对象模型
+
+    //命名规范:
+    //1.js中严格区分大小写
+    //2.使用驼峰命名法
+        //1)首字母小写，其余的每个有意义的单词的首字母大写
+        //2)可以使用数组、字母、下划线、$(数字不能作为首位
+    //3、不能使用关键字和保留字
+        //关键字：在js中有特殊意义的字
+        //保留字：未来可能成为关键字的
+
+
+    //变量：可变的量
+    //js中的变量是一个抽象的概念，变量是用来存储值和代表值的
+    //js中定义一个变量非常的简单：
+    //var 变量名 = 变量值;
+    //js中的变量是松散类型的：通过一个var变量名就可以存储任何的数据类型
+
+    var num=12;
+    var str="珠峰";
+    var boo=true;//true false
+    var n=null;
+    var m=undefined;
+
+    var obj={name:"zhufeng"};//{}对象数据类型
+    var ary=[1,2,3,4];//[]数组 也是对象数据类型
+    var reg=/^1\d{11}$/;//正则 也是对象数据类型
+    var fn=function () {
+
+    }//函数数据类型
+
+    //js中的数据类型分类：
+    //基本数据类型：由简单的结构组成的
+    //数字（number）、字符串（string）、布尔（boolean）、null、nudefined
+
+    //引用数据类型:结构相对复杂
+    //对象数据类型（object）
+    //函数数据类型（function）
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
