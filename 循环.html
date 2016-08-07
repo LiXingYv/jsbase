@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色</title>
+    <style type="text/css">
+        body,div,ul,li{
+            margin:0;
+            padding:0;
+            font-family:Arial;
+            font-size:14px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        #list{
+            margin:10px auto 0;
+            padding:10px;
+            width:500px;
+            border:1px solid #ddd;
+            border-radius:10px;
+            /*background:-webkit-linear-gradient(top left,#31b0d5,#67b168,#ac2925)*/
+        }
+        #list li{
+            height:30px;
+            line-height:30px;
+            cursor:pointer;
+        }
+        .c1{
+            background:#ddd;
+        }
+        .c2{
+            background: #a6e1ec;
+        }
+        .c3{
+            background: #ac2925;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<div id="list">
+    <ul>
+        <li>中储粮</li>
+        <li>4月全国</li>
+        <li>旅游局</li>
+        <li>郑州</li>
+        <li>教育部</li>
+        <li>中储粮</li>
+        <li>4月全国</li>
+        <li>旅游局</li>
+        <li>郑州</li>
+        <li>教育部</li>
+        <li>中储粮</li>
+        <li>4月全国</li>
+        <li>旅游局</li>
+        <li>郑州</li>
+        <li>教育部</li>
+        <li>中储粮</li>
+        <li>4月全国</li>
+        <li>旅游局</li>
+        <li>郑州</li>
+        <li>教育部</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    //for循环
+    //四部曲
+    //1.设置初始值 var i=0;
+    //2.设置循环条件
+    //3、执行循环体中的内容{[循环体]}抱起来的部分
+    //4.每一轮循环完成后都执行我们的i++累加操作
+
+    //break、continue:
+    //在循环体中遇到这两个关键字，循环体中后面的代码就不再执行了
+    //break:在循环体中，出现break，整个循环就直接的结束了，i++最后的这个累加的操作也不再执行了
+    //continue:再循环体中，出现continue，当前这一轮的循环就结束了，继续下一轮的循环
+
+
+    for(var i=0;i<10;i++){
+        if(i<5){
+            i+=2;
+            continue;
+        }
+        i+=3;
+        break;
+        console.log(i);
+    }
+    console.log(i);
+    //for in循环：用来循环一个对象中的属性名和属性值的
+
+    var obj={
+        name:"李松钋",
+        age:18,
+        height:"170cm",
+        hobby:"coding",
+        birthday:"1997-05-10",
+        1:10086
+    };
+    obj.name
+    obj["name"]
+    obj[1]//对于数字的属性只能这样取
+    //对象中有多少组键值对，我们就循环多少次
+    //顺序问题：首先循环数字的属性名（按照从小到大），再把剩下的属性名按照我们写的顺序循环
+    for(var key in obj){
+        console.log(key);//每一次循环获取的属性名
+        console.log(obj[key]);//获取属性值 在for in中只能通过 对象名[key]来获取 不能写obj.key
+    }
+
+    //原理：操作所有的li，让按照奇偶行的规律，改变他的class样式的属性值，奇数行是c1，偶数行是c2
+
+    //通过元素的标签名获取一组元素
+    //document.getElementsByTagName("元素的标签名");
+    //在整个文档中（获取的范围，上下文），我们通过元素的标签名（div、li、p....）来获取一组元素
+
+    //获取整个文档中所有的li，他是一个集合，我们把这个集合叫做类数组（类似于数组），并且类数组是对象数据类型的
+    var oLis=document.getElementById("list").getElementsByTagName("li");
+    console.log(oLis);
+    //索引：就是代表当前是第几个元素的位置下标，索引是从0开始的，索引为0代表第一个li，索引为1代表第二个li....索引为n代表第n+1个li
+    //length:代表获取的集合的长度，或者是当前获取了多少个li
+    //console.log(oLis.length);
+    //console.log(oLis["length"])
+
+    //console.log(oLis[0]);//获取某一个指定的元素oLis[索引]
+    //通过DOM方法获取的类数组还可以用.item(索引)来获取某一个
+    console.log(oLis.item(0));
+    for(var i=0;i<oLis.length;i++){
+        //i=0 第一次循环 获取第一个li oLis[0]
+        //i=1 第二次循环 获取第二个li oLis[1]
+        var oLi=oLis[i];//每一次循环的时候在类数组中把对应的li取出来
+        i%2===0?(oLi.className="c1",oLi.zf="c1"):(oLi.className="c2",oLi.zf="c2");
+        console.log(typeof oLi);
+        //因为每一个li都是对象数据类型的，那么应用这个思想，我们给每一个li增加一个自定义的属性名，属性值就是当前li的className的值
+
+
+
+        oLi.onmouseover=function(){
+            this.className="c3";
+        }
+
+        oLi.onmouseout=function(){
+            this.className=this.zf;
+        }
+
+
+
+
+        //oLi.className="c1";//设置每一个li的class样式属性的值
+        /*switch(i%3){
+            case 0:
+                oLi.className="c1";
+                break;
+            case 1:
+                oLi.className="c2";
+                break;
+            default:
+                oLi.className="c3";
+        }*/
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>
