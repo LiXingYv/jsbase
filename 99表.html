@@ -6,23 +6,27 @@
 </head>
 <body>
 <div id="tab">
-    <ul>
-        <li></li>
-    </ul>
+
 </div>
 <script type="text/javascript">
     var oTab=document.getElementById("tab");
     var str="";
     str+="<ul>";
-        for(var i=1;i<=9;i++){
+        for(var i=1;i<=9;i++){//行
             str+="<li>";
+                for(var j=1;j<=i;j++){//列
+                    str+="<span>"
+                        str+=" "+j+" * "+i+" = "+j*i+" ";
+                    str+="</span>"
+                }
             str+="</li>";
         }
 
     str+="</ul>"
-
+    oTab.innerHTML=str;
 
     //字符串拼接的第一条黄金法则：单双不能同时用外面是“”，里面需要是‘’，外面是‘’，里面是“”
+    //如果一个字符串中需要增加一个变量，看最外面是""还是''，如果是"",那么直接的"+变量+",如果是'',则是'+变量+'
 </script>
 </body>
 </html>
