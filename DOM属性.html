@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <h1>珠峰培训课程体系</h1>
+    <!--以下是珠峰培训的课程体系描述-->
+    <ul>
+        <li>HTML+CSS免费公开课</li>
+        <li>JavaScript免费公开课</li>
+        <li>JavaScript正式课</li>
+        <li>HTML5移动端正式课</li>
+        <li>Node.js正式课</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    //节点：Node 一个页面中的标签、文字、注释.....都是节点
+
+
+
+    //获取关系的属性
+    //childNodes:获取所有的子节点
+    //children:获取所有的元素子节点
+    //parentNode:获取父亲节点
+    //previousSibling:获取上一个哥哥节点
+    //nextSibling:获取下一个弟弟节点
+    //firstChild:获取所有子节点中的第一个
+    //lastChild:获取所有子节点中的最后一个
+
+    var oDiv = document.getElementById("div1");
+    console.log(oDiv.childNodes);//获取所有的子节点
+    console.log(oDiv.children);//获取所有的子节点
+    console.log(oDiv.parentNode);//获取父节点
+    console.log(oDiv.previousSibling);
+    console.log(oDiv.nextSibling);
+    console.log(oDiv.nextSibling);
+</script>
+</body>
+</html>
