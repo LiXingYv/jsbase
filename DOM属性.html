@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="div1">
-    <h1>珠峰培训课程体系</h1>
+    <h1>珠峰课程体系</h1>
     <!--以下是珠峰培训的课程体系描述-->
     <ul>
         <li>HTML+CSS免费公开课</li>
@@ -30,6 +30,39 @@
     //firstChild:获取所有子节点中的第一个
     //lastChild:获取所有子节点中的最后一个
 
+
+
+    //在js中需要我们掌握的节点类型：
+    //                nodeType          nodeName    nodeValue
+    //元素节点（元素标签）    1            大写的标签名       null
+    //文本节点（文字）       3               #text        文字内容
+    //注释节点（注释）       8               #comment     注释内容
+    //document            9               #document     null
+
+    //在标准浏览器下，我们把空格和回车都当做我们的文本节点来处理
+
+
+    //方法：摸拟我们的children方法，实现获取指定元素下的元素子节点
+    /*
+     *getMyChidren:获取指定元素下的所有的元素节点
+     * @paramete：
+     *    ele:我们要获取谁下面的，就把谁传进来
+     * @return:
+     *    我们最后获取的元素子节点
+     * by  李祥雨  on 2016/08/10
+     */
+    function getMyChildren(ele){
+        var ary=[],nodes=ele.childNodes;
+        for(var i=0;i<nodes.length;i++){
+            var cur=node[i];
+            if(cur.nodeType===1){
+                ary.push(cur);
+            }
+        }
+        return ary;
+    }
+
+
     var oDiv = document.getElementById("div1");
     console.log(oDiv.childNodes);//获取所有的子节点
     console.log(oDiv.children);//获取所有的子节点
@@ -37,6 +70,10 @@
     console.log(oDiv.previousSibling);
     console.log(oDiv.nextSibling);
     console.log(oDiv.nextSibling);
+
+    console.log(oDiv.nodeType);//1
+    console.log(oDiv.nodeName);//"DIV"
+    console.log(oDiv.nodeValue);//null
 </script>
 </body>
 </html>
